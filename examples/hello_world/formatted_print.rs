@@ -37,4 +37,25 @@ fn main() {
     // Rust even checks if the number of arguments is right:
     
     println!("My name is {0}, {1} {0}.", "Bond","James");
+    
+
+    // Only types that implement fmt::Display can be formatted with '{}'.
+    // User-defined types do not implement fmt::Display by default.
+    
+
+    #[allow(dead_code)]
+    struct Structure(i32);
+
+    // This will not compile because 'Structure' does not implement
+    // fmt::Display. 
+    // println!("This struct {} won't print...", Structure(3));
+    // FIXME ^ implement fmt::Display in later chapters
+
+    // For Rust 1.58 and above, you can directly capture the argument
+    // from a surounding variable. Just like the above, this will output 
+    // "    1", with four white spaces and then a one
+
+    let number: f64 = 1.0;
+    let width: usize = 5;
+    println!("{number:>width$}");
 }
