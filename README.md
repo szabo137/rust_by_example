@@ -6,7 +6,7 @@ This repo collects some small examples in rust. It was created only for learning
 
 ## Content
 
-* [Hello World](./examples/hello_world)
+* [Hello World](./examples/01-hello_world)
 
 
 
